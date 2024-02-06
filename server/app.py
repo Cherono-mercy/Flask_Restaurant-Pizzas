@@ -12,11 +12,18 @@ migrate = Migrate(app, db)
 db.init_app(app)
 
 # Routes
+# Index/Home endpoint
+@app.route('/')
+def index():
+    return "Welcome to restaurants/pizzas API"
+
+# GET /restaurants endpoint
 @app.route('/restaurants', methods=['GET'])
 def get_restaurants():
     restaurants = Restaurant.query.all()
     return jsonify([{'id': r.id, 'name': r.name, 'address': r.address} for r in restaurants])
 
+# GET /restaurants/:id endpoint
 @app.route('/restaurants/<int:id>', methods=['GET'])
 def get_restaurant(id):
     restaurant = Restaurant.query.get(id)
@@ -30,6 +37,7 @@ def get_restaurant(id):
     else:
         return jsonify({'error': 'Restaurant not found'}), 404
 
+# DELETE /restaurants/:id endpoint
 @app.route('/restaurants/<int:id>', methods=['DELETE'])
 def delete_restaurant(id):
     restaurant = Restaurant.query.get(id)
@@ -43,13 +51,14 @@ def delete_restaurant(id):
     else:
         return jsonify({'error': 'Restaurant not found'}), 404
 
+# GET /pizzas endpoint
 @app.route('/pizzas', methods=['GET'])
 def get_pizzas():
     pizzas = Pizza.query.all()
     return jsonify([{'id': p.id, 'name': p.name, 'ingredients': p.ingredients} for p in pizzas])
 
 
-
+# POST /restaurant_pizzas
 @app.route('/restaurant_pizzas', methods=['POST'])
 def create_restaurant_pizza():
     data = request.json
