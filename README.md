@@ -43,6 +43,10 @@ venv\Scripts\activate
 4. Install dependencies:
 pip install -r requirements.txt
 
+# Seed the database
+To add records to the database, run:
+python seed.py
+
 # Running the Backend/ Server side
 To start the backend server, run:
 flask run
