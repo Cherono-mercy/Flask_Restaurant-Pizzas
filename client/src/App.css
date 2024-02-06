@@ -1,38 +1,199 @@
 .App {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  list-style: none;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 20px;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input, select {
+  margin-top: 5px;
+  padding: 5px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* restaurantList.css */
+
+.restaurant-list {
+  padding: 20px;
+}
+
+.restaurant-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.restaurant-card {
+  background-color: brown;
   color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: calc(33.33% - 20px);
+  box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+.restaurant-card h2 {
+  margin-top: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.view-details-link {
+  color: white;
+  text-decoration: none;
+  background-color: #007bff;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
+
+.view-details-link:hover {
+  background-color: #0056b3;
+}
+
+/* restaurantDetails.css */
+
+.restaurant-details-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.restaurant-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.restaurant-address {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.pizza-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pizza-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.pizza-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.pizza-ingredients {
+  font-size: 14px;
+  color: #666;
+}
+
+.add-pizza-form {
+  margin-top: 20px;
+}
+
+.add-pizza-form select,
+.add-pizza-form input[type="number"],
+.add-pizza-form button.add-pizza-button {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-pizza-form button.add-pizza-button {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.add-pizza-form button.add-pizza-button:hover {
+  background-color: #0056b3;
+}
+
+.delete-restaurant-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-restaurant-button:hover {
+  background-color: #bb2d3b;
+}
+
+.back-to-restaurants-link {
+  display: block;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.confirmation-dialog {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.confirmation-dialog button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirmation-dialog button:hover {
+  background-color: #0056b3;
+}
+
